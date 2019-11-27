@@ -2,6 +2,9 @@
 name: 'Create GitHub deployment'
 description: 'Creates a github deployment'
 inputs:
+  token:
+    description: 'Github Token'
+    required: true
   environment:
     description: 'Environment to deploy to'
     required: true
@@ -24,11 +27,6 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.environment }}
-    - ${{ inputs.task }}
-    - ${{ inputs.description }}
-    - ${{ inputs.transient_environment }}
 
 branding:
   icon: 'activity'
