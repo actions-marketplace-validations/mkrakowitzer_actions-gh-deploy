@@ -12,6 +12,7 @@ curl --silent --show-error --fail \
 {
   "ref": "${GITHUB_SHA}",
   "auto_merge": false,
+  "transient_environment": ${INPUT_TRANSIENT_ENVIRONMENT},
   "environment": "${INPUT_ENVIRONMENT}",
   "task": "${INPUT_TASK}",
   "description": "${INPUT_DESCRIPTION}",
