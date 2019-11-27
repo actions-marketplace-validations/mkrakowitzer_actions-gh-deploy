@@ -23,7 +23,7 @@ This action creates a deployment using the github API
 ## Example usage
 
 ```
-uses: krakowitzerm/actions-gh-deploy@master
+uses: mkrakowitzer/actions-gh-deploy@master
 with:
   environment: development
   task: deploy
