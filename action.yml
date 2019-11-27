@@ -1,0 +1,35 @@
+# action.yml
+name: 'Create GitHub deployment'
+description: 'Creates a github deployment'
+inputs:
+  environment:
+    description: 'Environment to deploy to'
+    required: true
+    default: 'development'
+  task:
+    description: 'Specifies a task to execute (e.g., deploy or deploy:migrations)'
+    required: true
+    default: 'deploy'
+  description:
+    description: 'Description of the deploy'
+    required: false
+    default: 'None'
+  transient_environment:
+    description: 'Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future'
+    required: false
+    default: true
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.environment }}
+    - ${{ inputs.task }}
+    - ${{ inputs.description }}
+    - ${{ inputs.transient_environment }}
+
+branding:
+  icon: 'activity'
+  color: 'green'
