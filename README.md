@@ -1,6 +1,6 @@
-# A github action for creating PDFs from github markdown
+# A github action for creating github deployments
 
-This action creates PDF documents from github markdown
+This action creates a deployment using the github API
 
 ## Inputs
 
